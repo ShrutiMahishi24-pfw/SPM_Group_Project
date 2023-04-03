@@ -1,15 +1,7 @@
-///<summary>
-    ///Implementation of Index Model UI interface using HTML 
-///</summary>
-@page
-@model Appointments_UI.Pages.Appointments.IndexModel
+﻿@page
+@model Appointments_UI.Pages.Appointments.GetItemByDateModel
 @{
-    ViewData["Title"] = "Home page";
 }
-<br>
-<h2>List of Todos</h2>
-
-<a class='btn btn-primary btn-sm' href='/Appointments/Create'>Create Appointment</a>
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.appointments)
+        @foreach (var item in Model.ap)
         {
             <tr>
                 <td>@item.appointment_id</td>
@@ -38,11 +30,6 @@
                 <td>@item.doctor_department</td>
                 <td>@item.patient_disease</td>
                 <td>@item.patient_age</td>
-
-                <td>
-                    <a class="btn btn-primary btn-sm" href="/Appointments/Edit?id=@item.appointment_id">Edit</a>
-                    <a class="btn btn-danger btn-sm" href="/Appointments/Delete?id=@item.appointment_id">Delete</a>
-                </td>
             </tr>
         }
     </tbody>

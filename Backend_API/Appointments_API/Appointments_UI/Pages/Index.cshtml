@@ -1,11 +1,88 @@
-﻿@page
-@model IndexModel
+@page
+@model Appointments_UI.Pages.Shared.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
+<br>
+<h2>List of Appointments</h2>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<a class='btn btn-primary btn-sm' href='/Appointments/Create'>Create Appointment</a>
+<form action="/Appointments/GetItem" method="get">
+    <div class="input-group">
+        <input type="text" name="appointment_id" class="form-control" placeholder="Appointment ID">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Get By Appointment ID</button>
+        </span>
+    </div>
+</form>
+<form action="/Appointments/GetItemByDate" method="get">
+    <div class="input-group">
+        <input type="text" name="dt" class="form-control" placeholder="Appointment Date">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Get By Appointment Date</button>
+        </span>
+    </div>
+</form>
+<form action="/Appointments/GetItemByDoc" method="get">
+    <div class="input-group">
+        <input type="text" name="dId" class="form-control" placeholder="Doctor ID">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Get By Doctor ID</button>
+        </span>
+    </div>
+</form>
+<form action="/Appointments/GetItemByPatient" method="get">
+    <div class="input-group">
+        <input type="text" name="pid" class="form-control" placeholder="Patient ID">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Get By Patient ID</button>
+        </span>
+    </div>
+</form>
+<form action="/Appointments/GetItemByDisease" method="get">
+    <div class="input-group">
+        <input type="text" name="disease" class="form-control" placeholder="Disease Name">
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Get By Disease</button>
+        </span>
+    </div>
+</form>
+<a class='btn btn-primary btn-sm' href='/Appointments/AppointmentsCount'>Appointments Count</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Appointment ID</th>
+            <th>Doctor ID</th>
+            <th>Patient ID</th>
+            <th>Doctor Name</th>
+            <th>Patient Name</th>
+            <th>Apppointment Time</th>
+            <th>Doctor Department</th>
+            <th>Patient Disease</th>
+            <th>Patient Age</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Appointments)
+        {
+            <tr>
+                <td>@item.appointment_id</td>
+                <td>@item.doctor_id</td>
+                <td>@item.patient_id</td>
+                <td>@item.doctor_name</td>
+                <td>@item.patient_name</td>
+                <td>@item.appointment_time</td>
+                <td>@item.doctor_department</td>
+                <td>@item.patient_disease</td>
+                <td>@item.patient_age</td>
 
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Appointments/Edit?id=@item.appointment_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Appointments/Delete?id=@item.appointment_id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

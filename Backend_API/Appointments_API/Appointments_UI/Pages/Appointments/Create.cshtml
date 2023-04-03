@@ -1,51 +1,55 @@
+///<summary>
+    ///Frontend implementation(HTML)for implementing Create Model
+    ///</summary> 
+    
 @page
 @model Appointments_UI.Pages.Appointments.CreateModel
 @{
 }
-
 <br>
 <h2>Create Appointment</h2>
 @if (@Model.errorMessage.Length > 0)
 {
     <div>@Model.errorMessage</div>
 }
+///POST method for Creating Appointment with its required attributes 
 <form method="POST">
     <table>
         <tr>
             <td>Appointment ID</td>
-            <td><input type="text" name="Appointment ID" value="@Model.todo.appointment_id"></td>
+            <td><input type="text" name="appointment_id" value="@Model.todo.appointment_id"></td>
         </tr>
         <tr>
             <td>Doctor ID</td>
-            <td><input type="text" name="Doctor ID" value="@Model.todo.doctor_id"></td>
+            <td><input type="text" name="doctor_id" value="@Model.todo.doctor_id"></td>
         </tr>
         <tr>
             <td>Patient ID</td>
-            <td><input type="text" name="Patient ID" value="@Model.todo.patient_id"></td>
+            <td><input type="text" name="patient_id" value="@Model.todo.patient_id"></td>
         </tr>
         <tr>
             <td>Appointment Time</td>
-            <td><input type="text" name="Appointment Time" value="@Model.todo.appointment_time"></td>
+            <td><input type="text" name="appointment_time" value="@Model.todo.appointment_time"></td>
         </tr>
         <tr>
             <td>Patient Name</td>
-            <td><input type="text" name="Patient Name" value="@Model.todo.patient_name"></td>
+            <td><input type="text" name="patient_name" value="@Model.todo.patient_name"></td>
         </tr>
         <tr>
             <td>Doctor Name</td>
-            <td><input type="text" name="Doctor Name" value="@Model.todo.doctor_name"></td>
+            <td><input type="text" name="doctor_name" value="@Model.todo.doctor_name"></td>
         </tr>
         <tr>
             <td>Doctor Department</td>
-            <td><input type="text" name="Doctor Department" value="@Model.todo.doctor_department"></td>
+            <td><input type="text" name="doctor_department" value="@Model.todo.doctor_department"></td>
         </tr>
         <tr>
             <td>Patient Disease</td>
-            <td><input type="text" name="Patient Disease" value="@Model.todo.patient_disease"></td>
+            <td><input type="text" name="patient_disease" value="@Model.todo.patient_disease"></td>
         </tr>
         <tr>
             <td>Patient Age</td>
-            <td><input type="text" name="Patient Age" value="@Model.todo.patient_age"></td>
+            <td><input type="text" name="patient_age" value="@Model.todo.patient_age"></td>
         </tr>
     </table>
     <p></p>
@@ -56,4 +60,3 @@
 
      <input type="submit" value="Add" class="btn btn-primary" />
 </form>
-

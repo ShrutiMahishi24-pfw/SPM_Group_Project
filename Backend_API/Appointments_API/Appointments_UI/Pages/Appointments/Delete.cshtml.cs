@@ -1,4 +1,3 @@
-//Delete appointment backend C# code
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,29 +11,31 @@ namespace Appointments_UI.Pages.Appointments
 {
     using System.ComponentModel.DataAnnotations;
     using Appointments_API.Models;
-
-    //Deletes an Item
+     
+    ///<summary>
+      /// Obtaining and Deleting the appointment of the patient.
+    ///</summary>
     public class DeleteModel : PageModel
     {
-        public Appointments todo = new();
+        public Appointment todo = new();
         public string errorMessage = "";
         public string successMessage = "";
         public async void OnGet()
         {
 
-        string id = Request.Query["appointment_id"];
+        string id = Request.Query["id"];
 
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:5053");
-                //HTTP GET
-                var responseTask = client.GetAsync("Appointments/" + id);
+                //HTTP GET Request to obtain the appointment details of the patient.
+                var responseTask = client.GetAsync("Appointment/" + id);
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    todo = JsonConvert.DeserializeObject<Appointments>(readTask);
+                    todo = JsonConvert.DeserializeObject<Appointment>(readTask);
                 }
             }
         }
@@ -43,13 +44,16 @@ namespace Appointments_UI.Pages.Appointments
         public async void OnPost()
         {
             bool isDeleted = false;
-            int id = int.Parse(Request.Form["appointment_id"]);
+            int id = int.Parse(Request.Form["id"]);
 
             using (var client = new HttpClient())
             {
-                string Url = "http://localhost:5053/Expenditures";
-                var uri = new Uri(string.Format(Url, id));
-                var response = client.DeleteAsync(uri).Result;
+                client.BaseAddress = new Uri("http://localhost:5053");
+                
+                ///<summary>
+                   ///HTTP DELETE Request to delete the appointment details of the patient.
+                ///</summary>
+                var response = await client.DeleteAsync("/Appointment/" + id);
                 if (response.IsSuccessStatusCode)
                 {
                     isDeleted = true;

@@ -1,4 +1,6 @@
-//Delete appointment html interface code
+///<summary>
+    ///Implementing Delete Model UI interface via POST method to delete the patient details  
+    ///</summary>
 @page
 @model Appointments_UI.Pages.Appointments.DeleteModel
 @{
@@ -7,50 +9,53 @@
 <br>
 <h2>Delete Todo</h2>
 
-@if (@Model.errorMessage.Length > 0) {
+@if (@Model.errorMessage.Length > 0)
+{
     <div>@Model.errorMessage</div>
- }
+}
 <form method="POST">
 
     <input type="hidden" name="id" value="@Model.todo.appointment_id" />
     <table>
         <tr>
-            <td>Doctor ID</td>
+            <td>doctor_id</td>
             <td>@Model.todo.doctor_id</td>
         </tr>
         <tr>
-            <td>Patient ID</td>
+            <td>patient_id</td>
             <td>@Model.todo.patient_id</td>
         </tr>
         <tr>
-            <td>Appointment Time</td>
+            <td>appointment_id</td>
             <td>@Model.todo.appointment_time</td>
         </tr>s
         <tr>
-            <td>Patient Name</td>
+            <td>patient_name</td>
             <td>@Model.todo.patient_name</td>
         </tr>
         <tr>
-            <td>Doctor Name</td>
+            <td>doctor_name</td>
             <td>@Model.todo.doctor_name</td>
         </tr>
         <tr>
-            <td>Doctor Department</td>
+            <td>doctor_department</td>
             <td>@Model.todo.doctor_department</td>
         </tr>
         <tr>
-            <td>Patient Disease</td>
+            <td>patient_disease</td>
             <td>@Model.todo.patient_disease</td>
         </tr>
         <tr>
-            <td>Patient Age</td>
+            <td>patient_age</td>
             <td>@Model.todo.patient_age</td>
         </tr>
     </table>
-
     <p></p>
 
+    @if (@Model.successMessage.Length > 0)
+    {
+        <div>@Model.successMessage</div>
+    }
     <input type="submit" value="Delete" class="btn btn-primary" />
 </form>
-
 
