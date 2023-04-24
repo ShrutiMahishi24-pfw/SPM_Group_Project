@@ -8,13 +8,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using Newtonsoft.Json;
 
-namespace Appointments_UI.Pages.Shared
+namespace AppointmentsDetails.Pages.Shared
 {
     using Appointments_API.Models;
+    ///<summary>
+    ///HTTP GET request to get all the appointments.
+    ///</summary>
     public class IndexModel : PageModel
     {
 
-        public List<Appointment> Appointments = new();
+        public List<Appointments> Appointments = new();
 
         public async void OnGet()
         {
@@ -29,7 +32,7 @@ namespace Appointments_UI.Pages.Shared
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    Appointments = JsonConvert.DeserializeObject<List<Appointment>>(readTask);
+                    Appointments = JsonConvert.DeserializeObject<List<Appointments>>(readTask);
                 }
 
             }

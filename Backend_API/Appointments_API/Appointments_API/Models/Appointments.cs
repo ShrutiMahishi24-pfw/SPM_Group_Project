@@ -24,7 +24,7 @@ namespace Appointments_API.Models
         public int doctor_id { get; set; }
         public int patient_id { get; set; }
         [Key]
-        public int appointment_id { get; set; }
+        public int appointment_id { get; set; } = 1;
         public DateTime appointment_time { get; set; }
         public String patient_name { get; set; } = String.Empty;
         public String doctor_name { get; set; } = String.Empty;
@@ -34,4 +34,3 @@ namespace Appointments_API.Models
 
     }
 }
-

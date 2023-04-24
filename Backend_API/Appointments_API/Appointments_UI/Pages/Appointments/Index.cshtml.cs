@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using Newtonsoft.Json;
 
-namespace Appointments_UI.Pages.Appointments
+namespace AppointmentsDetails.Pages.Appointments
 {
     using Appointments_API.Models;
     

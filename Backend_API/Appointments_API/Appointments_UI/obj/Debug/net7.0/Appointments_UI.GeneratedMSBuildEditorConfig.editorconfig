@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/AppointmentsCount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0FwcG9pbnRtZW50c0NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,6 +34,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/GetItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0dldEl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/GetItemByDate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0dldEl0ZW1CeURhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/GetItemByDisease.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0dldEl0ZW1CeURpc2Vhc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/GetItemByDoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0dldEl0ZW1CeURvYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/GetItemByPatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXBwb2ludG1lbnRzL0dldEl0ZW1CeVBhdGllbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/Index.cshtml]

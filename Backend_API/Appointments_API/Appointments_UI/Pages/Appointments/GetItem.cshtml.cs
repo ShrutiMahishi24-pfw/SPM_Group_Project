@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 
-namespace Appointments_UI.Pages.Appointments
+namespace AppointmentsDetails.Pages.Appointments
 {
     using Appointments_API.Models;
     
@@ -16,7 +16,7 @@ namespace Appointments_UI.Pages.Appointments
     ///</summary>
     public class GetItemModel : PageModel
     {
-        public Appointment ap = new();
+        public Appointments ap = new();
         public async void OnGet()
         {
 
@@ -34,7 +34,7 @@ namespace Appointments_UI.Pages.Appointments
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    ap = JsonConvert.DeserializeObject<Appointment>(readTask);
+                    ap = JsonConvert.DeserializeObject<Appointments>(readTask);
                 }
             }
         }

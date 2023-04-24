@@ -1,37 +1,39 @@
-﻿@page
-@model Appointments_UI.Pages.Appointments.GetItemByDateModel
+@page
+@model AppointmentsDetails.Pages.Appointments.GetItemByDateModel
 @{
 }
-<table class="table">
-    <thead>
-        <tr>
-            <th>Appointment ID</th>
-            <th>Doctor ID</th>
-            <th>Patient ID</th>
-            <th>Doctor Name</th>
-            <th>Patient Name</th>
-            <th>Apppointment Time</th>
-            <th>Doctor Department</th>
-            <th>Patient Disease</th>
-            <th>Patient Age</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.ap)
-        {
+<body style="background-color: #F0FFFF">
+    <table class="table">
+        <thead>
             <tr>
-                <td>@item.appointment_id</td>
-                <td>@item.doctor_id</td>
-                <td>@item.patient_id</td>
-                <td>@item.doctor_name</td>
-                <td>@item.patient_name</td>
-                <td>@item.appointment_time</td>
-                <td>@item.doctor_department</td>
-                <td>@item.patient_disease</td>
-                <td>@item.patient_age</td>
+                <th>Appointment ID</th>
+                <th>Doctor ID</th>
+                <th>Patient ID</th>
+                <th>Doctor Name</th>
+                <th>Patient Name</th>
+                <th>Apppointment Time</th>
+                <th>Doctor Department</th>
+                <th>Patient Disease</th>
+                <th>Patient Age</th>
+                <th></th>
             </tr>
-        }
-    </tbody>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ap)
+            {
+                <tr>
+                    <td>@item.appointment_id</td>
+                    <td>@item.doctor_id</td>
+                    <td>@item.patient_id</td>
+                    <td>@item.doctor_name</td>
+                    <td>@item.patient_name</td>
+                    <td>@item.appointment_time</td>
+                    <td>@item.doctor_department</td>
+                    <td>@item.patient_disease</td>
+                    <td>@item.patient_age</td>
+                </tr>
+            }
+        </tbody>
 
-</table>
+    </table>
+</body>

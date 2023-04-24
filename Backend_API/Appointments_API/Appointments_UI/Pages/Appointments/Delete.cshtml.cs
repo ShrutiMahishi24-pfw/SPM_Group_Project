@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 
-namespace Appointments_UI.Pages.Appointments
+namespace AppointmentsDetails.Pages.Appointments
 {
     using System.ComponentModel.DataAnnotations;
     using Appointments_API.Models;
@@ -17,7 +17,7 @@ namespace Appointments_UI.Pages.Appointments
     ///</summary>
     public class DeleteModel : PageModel
     {
-        public Appointment todo = new();
+        public Appointments todo = new();
         public string errorMessage = "";
         public string successMessage = "";
         public async void OnGet()
@@ -35,13 +35,13 @@ namespace Appointments_UI.Pages.Appointments
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    todo = JsonConvert.DeserializeObject<Appointment>(readTask);
+                    todo = JsonConvert.DeserializeObject<Appointments>(readTask);
                 }
             }
         }
 
 
-        public async void OnPost()
+        public async Task<IActionResult> OnPost()
         {
             bool isDeleted = false;
             int id = int.Parse(Request.Form["id"]);
@@ -68,6 +68,7 @@ namespace Appointments_UI.Pages.Appointments
             {
                 errorMessage = "Error deleting";
             }
+            return RedirectToPage("/Index");
         }
     }
 }

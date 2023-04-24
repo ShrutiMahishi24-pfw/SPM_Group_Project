@@ -7,19 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using Newtonsoft.Json;
-using Appointments_UI.Pages;
+using AppointmentsDetails.Pages;
 using Appointments_API;
 
-namespace Appointments_UI.Pages.Appointments
+namespace AppointmentsDetails.Pages.Appointments
 {
     using Appointments_API.Models;
 
-     ///<summary>
-      ///Obtaining and Editing the appointment details of the patient.
+    ///<summary>
+    ///Obtaining and Editing the appointment details of the patient.
     ///</summary>
     public class EditModel : PageModel
     {
-        public Appointment todo = new();
+        public Appointments todo = new();
+        public List<Appointments> apps = new();
         public string errorMessage = "";
         public string successMessage = "";
 
@@ -29,7 +30,7 @@ namespace Appointments_UI.Pages.Appointments
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:5053");
-                
+
                 //HTTP GET request to get the appropriate appointment details of the patient to edit.
                 var responseTask = client.GetAsync("Appointment/" + id);
                 responseTask.Wait();
@@ -38,12 +39,12 @@ namespace Appointments_UI.Pages.Appointments
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    todo = JsonConvert.DeserializeObject<Appointment>(readTask);
+                    todo = JsonConvert.DeserializeObject<Appointments>(readTask);
                 }
             }
         }
 
-        public async void OnPost()
+        public async Task<IActionResult> OnPost()
         {
             /// Assigning the appointment details of the patient to local variables.
 
@@ -65,28 +66,51 @@ namespace Appointments_UI.Pages.Appointments
             else
             {
                 var opt = new JsonSerializerOptions() { WriteIndented = true };
-                string json = System.Text.Json.JsonSerializer.Serialize<Appointment>(todo, opt);
+                string json = System.Text.Json.JsonSerializer.Serialize<Appointments>(todo, opt);
 
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri("http://localhost:5053");
+                    var responseTask = client.GetAsync("Appointment/Analysis-GetAppointmentsByDoctor?dId=" + todo.doctor_id);
+                    responseTask.Wait();
+                    var resultList = responseTask.Result;
+                    bool flag = false;
+                    if (resultList.IsSuccessStatusCode)
+                    {
+                        var readTask = await resultList.Content.ReadAsStringAsync();
+                        apps = JsonConvert.DeserializeObject<List<Appointments>>(readTask);
+                    }
+                    foreach (var item in apps)
+                    {
+                        if (todo.appointment_id != item.appointment_id && todo.appointment_time == item.appointment_time)
+                        {
+                            errorMessage = "This appointment time is already booked for the doctor";
+                            flag = true;
+                        }
+                    }
+                    if (flag == false)
+                    {
+                        var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
-                    var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                   
-                    ///<summary>
-                      ///HTTP PUT request to update the appropriate appointment details of the patient.
-                    ///</summary>
-                    var result = await client.PutAsync("Appointment", content);
-                    string resultContent = await result.Content.ReadAsStringAsync();
-                    Console.WriteLine(resultContent);
+                        ///<summary>
+                        ///HTTP PUT request to update the appropriate appointment details of the patient.
+                        ///</summary>
+                        var result = await client.PutAsync("Appointment", content);
+                        string resultContent = await result.Content.ReadAsStringAsync();
+                        Console.WriteLine(resultContent);
 
-                    if (!result.IsSuccessStatusCode) {
-                        errorMessage = "Error editing";
-                    } else {
-                        successMessage = "Successfully edited";
+                        if (!result.IsSuccessStatusCode)
+                        {
+                            errorMessage = "Error editing";
+                        }
+                        else
+                        {
+                            successMessage = "Successfully edited";
+                        }
                     }
                 }
             }
+            return RedirectToPage("/Index");
         }
     }
 }

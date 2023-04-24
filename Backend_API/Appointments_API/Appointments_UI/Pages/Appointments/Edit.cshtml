@@ -1,54 +1,55 @@
 @page
-@model Appointments_UI.Pages.Appointments.EditModel
-@{
+@model AppointmentsDetails.Pages.Appointments.EditModel
+@{}
 <br>
-<h2>Edit Appointment</h2>
-
-@if (@Model.errorMessage.Length > 8) {
-    <div>@Model.errorMessage</div>
-}
-<form method="POST">
-    <input type="hidden" name="id" value="@Model.todo.appointment_id" />
-    <table>
-        <tr>
-            <td>Doctor ID</td>
-            <td><input type="text" name="doctor_id" value="@Model.todo.doctor_id"></td>
-        </tr>
-        <tr>
-            <td>Patient ID</td>
-            <td><input type="number" name="patient_id" value="@Model.todo.patient_id"></td>
-        </tr>
-        <tr>
-            <td>Appointment Time</td>
-            <td><input type="text" name="appointment_time" value="@Model.todo.appointment_time"></td>
-        </tr>
-        <tr>
-            <td>Patient Name</td>
-            <td><input type="text" name="patient_name" value="@Model.todo.patient_name"></td>
-        </tr>
-        <tr>
-            <td>Doctor Name</td>
-            <td><input type="text" name="doctor_name" value="@Model.todo.doctor_name"></td>
-        </tr>
-        <tr>
-            <td>Doctor Department</td>
-            <td><input type="text" name="doctor_department" value="@Model.todo.doctor_department"></td>
-        </tr>
-        <tr>
-            <td>Patient Disease</td>
-            <td><input type="text" name="patient_disease" value="@Model.todo.patient_disease"></td>
-        </tr>
-        <tr>
-            <td>Patient Age</td>
-            <td><input type="text" name="patient_age" value="@Model.todo.patient_age"></td>
-        </tr>
-    </table>
-    <p></p>
-
-    @if (@Model.successMessage.Length > 0)
+<body style="background-color: #FFFAC">
+    <h2>Edit Appointment</h2>
+    @if (@Model.errorMessage.Length > 8)
     {
-        <div>@Model.successMessage</div>
+        <div>@Model.errorMessage</div>
     }
-    <input type="submit" value="Edit" class="btn btn-primary" />
-</form>
+    <form method="POST">
+        <input type="hidden" name="id" value="@Model.todo.appointment_id" />
+        <table>
+            <tr>
+                <td>Doctor ID</td>
+                <td><input type="number" name="doctor_id" value="@Model.todo.doctor_id"></td>
+            </tr>
+            <tr>
+                <td>Patient ID</td>
+                <td><input type="number" name="patient_id" value="@Model.todo.patient_id"></td>
+            </tr>
+            <tr>
+                <td>Appointment Time</td>
+                <td><input type="datetime" name="appointment_time" value="@Model.todo.appointment_time"></td>
+            </tr>
+            <tr>
+                <td>Patient Name</td>
+                <td><input type="text" name="patient_name" value="@Model.todo.patient_name"></td>
+            </tr>
+            <tr>
+                <td>Doctor Name</td>
+                <td><input type="text" name="doctor_name" value="@Model.todo.doctor_name"></td>
+            </tr>
+            <tr>
+                <td>Doctor Department</td>
+                <td><input type="text" name="doctor_department" value="@Model.todo.doctor_department"></td>
+            </tr>
+            <tr>
+                <td>Patient Disease</td>
+                <td><input type="text" name="patient_disease" value="@Model.todo.patient_disease"></td>
+            </tr>
+            <tr>
+                <td>Patient Age</td>
+                <td><input type="number" name="patient_age" value="@Model.todo.patient_age"></td>
+            </tr>
+        </table>
+        <p></p>
 
+        @if (@Model.successMessage.Length > 0)
+        {
+            <div>@Model.successMessage</div>
+        }
+        <input type="submit" value="Edit" class="btn btn-primary" />
+    </form>
+</body>

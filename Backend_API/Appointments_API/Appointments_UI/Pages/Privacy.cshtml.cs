@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Appointments_UI.Pages;
+namespace AppointmentsDetails.Pages;
 
 public class PrivacyModel : PageModel
 {
@@ -16,5 +16,3 @@ public class PrivacyModel : PageModel
     {
     }
 }
-
-

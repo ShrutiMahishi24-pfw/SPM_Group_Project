@@ -4,7 +4,7 @@ VisualStudioVersion = 25.0.1705.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointments_API", "Appointments_API\Appointments_API.csproj", "{8978C8AA-FEE1-4201-ACCA-0F156C8188F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointments_UI", "Appointments_UI\Appointments_UI.csproj", "{EF5E989D-A2BB-4400-91D0-DA11773DE3D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentsDetails", "Appointments_UI\AppointmentsDetails.csproj", "{EF5E989D-A2BB-4400-91D0-DA11773DE3D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

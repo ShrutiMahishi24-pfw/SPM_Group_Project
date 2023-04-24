@@ -17,4 +17,11 @@
   <ItemGroup>
     <Folder Include="Pages\Appointments\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Appointments_API\Appointments_API.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
+
+

@@ -1,4 +1,3 @@
-///Importing C# libraries 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 
 ///<summary>
- ///C# implementation for Maintaining Appointment Count 
+///C# implementation for Maintaining Appointment Count 
 ///</summary>
-namespace Appointments_UI.Pages.Appointments
+namespace AppointmentsDetails.Pages.Appointments
 {
     //Gets the maximum value
-	public class AppointmentsCount : PageModel
+    public class AppointmentsCount : PageModel
     {
         public int apcount = new();
         public async void OnGet()
         {
             var client = new HttpClient();
-            var responseTask = client.GetAsync("https://localhost:5053/Appointment/Analysis-GetAppointmentsCount");
+            var responseTask = client.GetAsync("http://localhost:5053/Appointment/Analysis-GetAppointmentsCount");
             responseTask.Wait();
             var result = responseTask.Result;
             if (result.IsSuccessStatusCode)

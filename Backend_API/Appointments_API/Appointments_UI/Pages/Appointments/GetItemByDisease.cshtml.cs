@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -7,13 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 
-namespace Appointments_UI.Pages.Appointments
+namespace AppointmentsDetails.Pages.Appointments
 {
     using Appointments_API.Models;
+    ///<summary>
     // gets the item from the UI and displays the details
+    ///</summary>
     public class GetItemByDiseaseModel : PageModel
     {
-        public List<Appointment> ap = new();
+        public List<Appointments> ap = new();
         public async void OnGet()
         {
 
@@ -29,7 +31,7 @@ namespace Appointments_UI.Pages.Appointments
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    ap = JsonConvert.DeserializeObject<List<Appointment>>(readTask);
+                    ap = JsonConvert.DeserializeObject<List<Appointments>>(readTask);
                 }
             }
         }

@@ -1,27 +1,69 @@
-﻿<Properties StartupConfiguration="{8978C8AA-FEE1-4201-ACCA-0F156C8188F8}|http">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Appointments_API/Controllers/AppointmentController.cs">
+﻿<Properties StartupConfiguration="Multiple Projects">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_API/Repositories/AppointmentRepository.cs" relfile="Appointments_API/Repositories/AppointmentRepository.cs" line="81" column="1" />
+      <Breakpoint file="/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/GetItemByDate.cshtml" relfile="Appointments_UI/Pages/Appointments/GetItemByDate.cshtml" line="19" column="1" />
+      <Breakpoint file="/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_UI/Pages/Appointments/GetItemByDate.cshtml" relfile="Appointments_UI/Pages/Appointments/GetItemByDate.cshtml" line="22" column="1" />
+      <Breakpoint file="/Users/deepthi/Documents/GitHub/Group_project_SPM/SPM_Group_Project/Backend_API/Appointments_API/Appointments_API/Repositories/AppointmentRepository.cs" relfile="Appointments_API/Repositories/AppointmentRepository.cs" line="80" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.AppointmentsDetails PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.Appointments__API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Appointments_UI/Program.cs">
     <Files>
-      <File FileName="Appointments_API/Controllers/AppointmentController.cs" Line="124" Column="23" />
+      <File FileName="Appointments_UI/Program.cs" Line="23" Column="1" />
+      <File FileName="Appointments_UI/Pages/Appointments/Create.cshtml" Line="13" Column="12" />
+      <File FileName="Appointments_UI/Pages/Appointments/Create.cshtml.cs" Line="9" Column="30" />
+      <File FileName="Appointments_UI/Pages/Appointments/Delete.cshtml" Line="20" Column="14" />
+      <File FileName="Appointments_UI/Pages/Appointments/Delete.cshtml.cs" Line="10" Column="30" />
+      <File FileName="Appointments_UI/Pages/Appointments/Edit.cshtml" Line="3" Column="3" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItem.cshtml" Line="3" Column="3" />
+      <File FileName="Appointments_UI/Pages/Appointments/Index.cshtml" Line="13" Column="36" />
+      <File FileName="Appointments_UI/Pages/Appointments/Edit.cshtml.cs" Line="15" Column="35" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItem.cshtml.cs" Line="12" Column="35" />
+      <File FileName="Appointments_UI/Pages/Appointments/Index.cshtml.cs" Line="12" Column="2" />
+      <File FileName="Appointments_UI/appsettings.json" Line="8" Column="22" />
+      <File FileName="Appointments_UI/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Appointments_UI/Properties/launchSettings.json" Line="21" Column="32" />
+      <File FileName="Appointments_UI/Pages/Index.cshtml" Line="14" Column="23" />
+      <File FileName="Appointments_API/Program.cs" Line="55" Column="1" />
+      <File FileName="Appointments_UI/Pages/Index.cshtml.cs" Line="11" Column="30" />
+      <File FileName="Appointments_UI/Pages/Error.cshtml" />
       <File FileName="Appointments_API/appsettings.json" />
-      <File FileName="Appointments_API/Properties/launchSettings.json" />
-      <File FileName="Appointments_API/Models/Appointments.cs" />
-      <File FileName="Appointments_API/Interfaces/IAppointmentRepository.cs" />
-      <File FileName="Appointments_API/Data/DataContext.cs" />
-      <File FileName="Appointments_API/Repositories/AppointmentRepository.cs" />
-      <File FileName="Appointments_API/appsettings.Development.json" />
+      <File FileName="Appointments_API/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Appointments_API/Repositories/AppointmentRepository.cs" Line="37" Column="39" />
+      <File FileName="Appointments_API/Properties/launchSettings.json" Line="41" Column="2" />
+      <File FileName="Appointments_API/Seed.cs" Line="22" Column="14" />
+      <File FileName="Appointments_API/Controllers/AppointmentController.cs" Line="20" Column="22" />
+      <File FileName="Appointments_UI/Pages/Privacy.cshtml" />
+      <File FileName="Appointments_API/WeatherForecast.cs" />
+      <File FileName="Appointments_API/Data/DataContext.cs" Line="15" Column="2" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByPatient.cshtml" Line="21" Column="40" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByPatient.cshtml.cs" Line="10" Column="30" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByDoc.cshtml.cs" Line="20" Column="46" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByDate.cshtml.cs" Line="11" Column="2" />
+      <File FileName="Appointments_UI/Pages/Appointments/AppointmentsCount.cshtml.cs" Line="13" Column="30" />
+      <File FileName="Appointments_UI/Pages/Appointments/AppointmentsCount.cshtml" Line="1" Column="1" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByDoc.cshtml" Line="14" Column="24" />
+      <File FileName="Appointments_API/Interfaces/IAppointmentRepository.cs" Line="15" Column="35" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByDate.cshtml" Line="11" Column="33" />
+      <File FileName="Appointments_API/Controllers/WeatherForecastController.cs" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByDisease.cshtml" Line="21" Column="40" />
+      <File FileName="Appointments_UI/Pages/Appointments/GetItemByDisease.cshtml.cs" Line="14" Column="36" />
+      <File FileName="Appointments_UI/Pages/Shared/_Layout.cshtml" Line="44" Column="1" />
+      <File FileName="Appointments_UI/Pages/_ViewImports.cshtml" Line="1" Column="7" />
+      <File FileName="Appointments_UI/Pages/Privacy.cshtml.cs" Line="4" Column="30" />
+      <File FileName="Appointments_API/Models/Appointments.cs" Line="27" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Appointments_API" expanded="True">
+          <Node name="Appointments_API" expanded="True" selected="True">
+            <Node name="AppointmentsDetails" expanded="True">
+              <Node name="Properties" expanded="True" />
+            </Node>
             <Node name="Appointments_API" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="AppointmentController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Interfaces" expanded="True" />
               <Node name="Models" expanded="True" />
@@ -34,7 +76,14 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Appointments__UI FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Appointments__API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
+      <Items>
+        <StartupItem ItemId="{8978C8AA-FEE1-4201-ACCA-0F156C8188F8}" ItemName="Appointments_API" ConfigurationId="http" />
+        <StartupItem ItemId="{EF5E989D-A2BB-4400-91D0-DA11773DE3D6}" ItemName="AppointmentsDetails" ConfigurationId="http" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
 </Properties>
